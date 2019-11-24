@@ -1,0 +1,45 @@
+{
+	"USER" : [
+		{
+			"id":0,
+			"username":"jean-kikoojap",
+			"password":"IhTUgKkvcXEiBxvVUvfRtA==", // AES Encrypted
+			"email":"pelo.baisselesyeux@gmail.com",
+			"posts":[
+				0, // id du post 
+				8,
+				125,
+				...
+			],
+			"likes":[
+				0, // id du post 
+				12,
+				18,
+				56,
+				...
+			]
+		},
+		...
+	],
+	"POST":[
+		{
+			"id":0,
+			"description":"Petit tonclage avec la famille, vous êtes mes goys sûrs !",
+			"tags":"barbecue, tonclure2000, zarma",
+			"likecounter":[
+				15,
+				25,
+				3,
+				12,
+				29,
+				120,
+				86,
+				76,
+				37,
+				18
+			]
+		},
+		...
+	]
+}
+	
