@@ -20,7 +20,7 @@
         <endpoints.framework.version>2.1.2</endpoints.framework.version>
     <endpoints.management.version>1.0.4</endpoints.management.version>
     
-    <endpoints.project.id>SuperMomo44</endpoints.project.id>
+    <endpoints.project.id>tinyinstagram-259109</endpoints.project.id>
   </properties>
   
   <dependencyManagement>
