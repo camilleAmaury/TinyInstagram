@@ -4,6 +4,7 @@ foo\FriendServlet.class
 foo\PetitionServlet.class
 foo\ScoreEndpoint.class
 foo\Counting$1.class
+foo\GetPosts.class
 foo\HelloAppEngine.class
 foo\CountingSh$1.class
 foo\RandomResult.class

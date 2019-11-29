@@ -48,7 +48,7 @@ public class Counting extends HttpServlet {
 			e2.printStackTrace();
 		}
 
-		Thread[] th=new Thread[2];
+		Thread[] th=new Thread[5];
 		for (int i=0;i<th.length;i++) {			
 			th[i]=ThreadManager.createThreadForCurrentRequest(new Runnable()  {
 				public void run() {
@@ -57,7 +57,7 @@ public class Counting extends HttpServlet {
 						try {
 							Entity c = datastore.get(e.getKey());
 							Long v=(Long)c.getProperty("val");
-							 Thread.sleep(100);
+							Thread.sleep(100);
 							c.setProperty("val", v+1);
 							response.getWriter().print("Thread:"+Thread.currentThread()+",val:"+v+"<br>");
 							ds.put(c);
