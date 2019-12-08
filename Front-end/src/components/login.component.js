@@ -35,7 +35,15 @@ state = {
       .then(res => {
         if (res.data[0] == 1) {
             this.state.isSignedUp = true;
-            this.props.history.push('/homepage');
+            var result=res.data[1].split('user(')[1];
+            var id_user =  result.substr(0, result.length-1);
+            this.props.history.push({
+                pathname : '/homepage',
+                state :{
+                userId : id_user
+                }
+              } 
+            );
         }
         else {
           this.state.IsError = true;

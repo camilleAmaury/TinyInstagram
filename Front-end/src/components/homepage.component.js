@@ -3,6 +3,7 @@ import axios from 'axios';
 import './homepage-stylesheet.css'
 import {Link} from "react-router-dom";
 
+
 class ActionBar extends React.Component {
     constructor(){
       super();
@@ -158,9 +159,12 @@ class Post extends React.Component {
 
         );
     }
+    
 }
 
 export default class homepage extends Component {
+
+  
     state = {
         posts: [
           {
@@ -207,6 +211,13 @@ export default class homepage extends Component {
             console.log(data);
             this.setState({comments: [data, ...state.comments]});
           }
+
+          handleRedirectToAddPost = event => {
+            console.log(this.props.location.state.userId);
+            this.props.history.push({pathname : '/addPost', state :{userId : this.props.location.state.userId}} );
+          }
+        
+          
         render() {
             return (
                 <>
@@ -216,7 +227,7 @@ export default class homepage extends Component {
 
                     <section class="icons-section">
                         <a class="fa fa-home" href="/homepage"></a>
-                        <a class="fa fa-plus-square-o" href="#"></a>
+                        <a class="fa fa-plus-square-o"  onClick={this.handleRedirectToAddPost.bind(this)}></a>
                         <a class="fa fa-user" href="/profile"></a>
                     </section>
                 </nav>

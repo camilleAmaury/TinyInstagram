@@ -39,6 +39,27 @@ input[type="password"]:focus, input[type="text"]:focus {
   border: 1px solid #a1a1a1;
 }
 
+textarea[type="password"], textarea[type="text"] {
+    background: rgba(250,250,250,1);
+    border: 1px solid rgb(236, 234, 234);
+    border-radius: 3px;
+    box-shadow: 0 1px #fff;
+    box-sizing: border-box;
+    color: black;
+    height: 100px;
+    margin: 10px 0 0 40px;
+    padding: 10px;
+    font-size: 13px;
+    width: 320px;
+  }
+  textarea[type="password"]::placeholder, textarea[type="text"]::placeholder {
+    color: rgb(165, 164, 164);
+  }
+  textarea[type="password"]:focus, textarea[type="text"]:focus {
+    outline: 0;
+    border: 1px solid #a1a1a1;
+  }
+
 .forgot {
   color: #7f7f7f;
   display: inline-block;
@@ -67,7 +88,6 @@ input[type="submit"]:hover, input[type="submit"]:focus {
   background: rgb(48, 144, 233);
   outline: 0;
 }
-
 
 .divider {
   overflow: hidden;

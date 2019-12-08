@@ -1,0 +1,16 @@
+
+  /* * Post widget * */
+  
+  input[type="file"] {
+    display: none;
+  }
+  .post-actions__attachments {
+    display: inline-block;
+    width: 60%;
+  }
+  .attachments--btn {
+    background-color: #eaeaea;
+    color: #000505;
+  
+    border-radius: 1.5em;
+  }
