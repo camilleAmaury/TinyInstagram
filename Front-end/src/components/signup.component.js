@@ -52,38 +52,32 @@ export default class SignUp extends Component {
       }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+<div class="login">
+  
+    <h1><img src="https://i.imgur.com/wvLiKam.png" width="200px" height="68px"/></h1>
 
-                <div className="form-group">
-                    <label>Nom</label>
-                    <input type="text" className="form-control" name="firstName" placeholder="saisir votre nom" onChange={this.handleChangeFirstName}/>
-                </div>
+    <form onSubmit={this.handleSubmit}>
+    <input placeholder="nom" type="text" name="firstName" onChange={this.handleChangeFirstName}/>
+    <input placeholder="prénom" type="text" name="lastName" onChange={this.handleChangeLastName}/>
+    <input placeholder="email" type="text" name="email" onChange={this.handleChangeEmail}/>
+    <input placeholder="Password" type="password" name="password" onChange={this.handleChangePassword}/>
+    
+    <input type="submit" value="S'inscrire" />
 
-                <div className="form-group">
-                    <label>Prénom</label>
-                    <input type="text" className="form-control" name="lastName" placeholder="saisir votre prénom" onChange={this.handleChangeLastName} />
-                </div>
+    </form>
 
-                <div className="form-group">
-                    <label>Email</label>
-                    <input type="email" className="form-control" name="email" placeholder="saisir votre email" onChange={this.handleChangeEmail} />
-                </div>
+    <div class="divider"><b>OU</b></div>
 
-                <div className="form-group">
-                    <label>Mot de passe</label>
-                    <input type="password" className="form-control" name="password" placeholder="saisir votre mot de passe" onChange={this.handleChangePassword}/>
-                </div>
+    <div class="forgotwrapper"><div class="forgot"><a href="/connexion">
+    Déjà inscrit(e)</a></div></div>
 
-                <button type="submit" className="btn btn-primary btn-block">S'inscrire</button>
-                <p className="forgot-password text-right">
-                    Déjà inscrit(e) <a href="/connexion">connexion?</a>
-                </p>
+  <br/>
+  { this.state.isSignedUp && <div class="alert alert-success" role="alert">
+                    Utilisateur crée avec succès
+                  </div> }
+</div>
 
-                <br/>
-                { this.state.isSignedUp && <div class="alert alert-success" role="alert">
-                  Utilisateur crée avec succès
-                </div> }
-            </form>
+
         );
     }
 }

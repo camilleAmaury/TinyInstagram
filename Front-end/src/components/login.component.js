@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router';
 import axios from 'axios';
-
+import './login-stylesheet.css'
 
 export default class Login extends Component {
 
@@ -50,25 +49,32 @@ state = {
 
     render() {
         return (
+          
+<div class="login">
 
-            <form onSubmit={this.handleSubmit}>
+    <h1><img src="https://i.imgur.com/wvLiKam.png" width="200px" height="68px"/></h1>
 
-                <div className="form-group">
-                    <label>Email</label>
-                    <input type="email" className="form-control" name="email"  placeholder="Saisir votre email" onChange={this.handleChangeEmail.bind(this)}/>
-                </div>
+    <form onSubmit={this.handleSubmit}>
 
-                <div className="form-group">
-                    <label>Mot de passe</label>
-                    <input type="password" className="form-control" name="password" placeholder="Saisir votre mot de passe" onChange={this.handleChangePassword.bind(this)}/>
-                </div>
+        <input placeholder="email" type="text" name="email" onChange={this.handleChangeEmail.bind(this)}/>
+        <input placeholder="Password" type="password" name="password" onChange={this.handleChangePassword.bind(this)}/>
 
-                <button type="submit" className="btn btn-primary btn-block">Se connecter</button>
-                <br/>
-                { this.state.IsError && <div class="alert alert-danger alert-dismissible fade show">
-                <strong>Error!</strong> Mot de passe ou email incorrect !
-                </div> }
-            </form>
+        <input type="submit" value="Se connecter" />
+
+    </form>
+
+    <div class="divider"><b>OU</b></div>
+
+    <div class="forgotwrapper">
+        <div class="forgot"><a href="/inscription">
+    Vous n'avez pas de compte?</a></div>
+    </div>
+
+    <br/> { this.state.IsError &&
+    <div class="alert alert-danger alert-dismissible fade show">
+        <strong>Error!</strong> Mot de passe ou email incorrect !
+    </div> }
+</div>
 
         );
     }

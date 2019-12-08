@@ -1,0 +1,146 @@
+:root {
+  --card-border: 1px solid grey; 
+}
+
+body {
+  background-color: #fafafa;
+  
+}
+.card {
+  position: relative;
+  top: 40px; left: 0px;
+  border: var(--card-border);
+  border-radius: 2.8px;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: arial;
+  background-color: white;
+}
+
+.card-top {
+  height: 50px;
+  display: flex;
+  border-bottom: var(--card-border);
+}
+
+.card-top a {
+  cursor: pointer;
+}
+
+.card-poster-image-container {
+  overflow: none;
+  height: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+}
+
+.card-poster-name {
+  margin: auto auto auto 10px;
+  font-size: 82%;
+  font-weight: bold;
+}
+
+.user-pfp {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin: auto;
+}
+
+.card-image-container {
+  display: flex;
+}
+
+.card-image-container img {
+  width: 100%;
+  border-bottom: var(--card-border);
+}
+
+.card-middle {
+  display: flex;
+  flex-direction: column;
+  border-bottom: var(--card-border);
+  padding: 10px;
+}
+
+
+.card-action-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-action-bar a {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.card-action-bar a:nth-child(1) {
+  margin-right: 15px;
+}
+
+.card-action-bar a:nth-child(2) {
+  margin-left: auto;
+}
+
+.card-views {
+  width: 100%;
+  font-weight: bold;
+  font-size: 82%;
+  display: flex;
+}
+
+.card-view-count {
+  margin: 5px 0;
+}
+
+.card-bottom {
+  display: flex;
+  padding: 10px;
+  height: 30px;
+}
+
+
+
+.card-bottom input {
+  border: none;
+  flex-grow: 1;
+}
+
+.card-bottom button {
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0.5;
+  color: blue;
+  border: none;
+  padding: none;
+}
+
+.postable {
+  opacity: 1 !important;
+}
+
+.post-comments {
+  width: 100%;
+}
+
+.comment {
+  width: 100%;
+  font-size: 82%;
+}
+
+.comment .user {
+  font-weight: bold;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.comment .content {
+  
+}
+
+.comment .timestamp {
+  font-size: 12px;
+  margin-top: 5px;
+  color: grey;
+}
