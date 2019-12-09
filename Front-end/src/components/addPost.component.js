@@ -7,7 +7,8 @@ export default class addPost extends Component {
         tag: '',
         description: '',
         image: null,
-        isPosted :false
+        isPosted :false,
+        imagePreviewUrl:'',
       }
     
       handleChangeTag = event => {
@@ -19,31 +20,44 @@ export default class addPost extends Component {
       }
     
       handleChangeImage = event => {
-        this.setState({ image: event.target.files[0]});
+
+        let reader = new FileReader();
+        let file = event.target.files[0];
+
+        reader.onloadend = () => {
+          this.setState({
+            image: file,
+            imagePreviewUrl: reader.result
+          });
+        }
+    
+        reader.readAsDataURL(file);
       }
-    
+      
       handleSubmit = event => {
-        event.preventDefault();
-    
-        const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
-        const URL = 'https://tinyinstagram-259109.appspot.com/addpost';
-        const formData = new FormData();
-        formData.append('image',this.state.image);  
         
-        axios.get(PROXY_URL+URL,{
+        event.preventDefault();
+        
+        const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
+        const urlapi = 'https://tinyinstagram-259109.appspot.com/addpost';
+        var blob = new Blob([this.state.image]);
+        var imageBlob = URL.createObjectURL(blob);
+
+        axios.get(PROXY_URL+urlapi,{
             params: {
                 description: this.state.description,
-                id_user: this.props.location.state.userId,
-                picture : formData,
+                id_user: localStorage.getItem('idUser'),
+                picture : imageBlob,
                 tags: this.state.tag
               }
             })
-        
+           
           .then(res => {
             if (res.data[0] == 1) {
-                console.log(res);
                 this.state.isPosted = true;
-                this.props.history.push({pathname : '/addPost', state :{userId : this.props.location.state.userId}} );
+                this.props.history.push({
+                  pathname : '/homepage'
+                }) 
             }
             else {
                 console.log(res);
@@ -54,6 +68,18 @@ export default class addPost extends Component {
           });
       }
         render() {
+          const imgSize = {
+            
+                height:'250px',
+                width: '350px',
+                "border-radius": '1.5em'
+ 
+          };
+          let {imagePreviewUrl} = this.state;
+          let $imagePreview = null;
+          if (imagePreviewUrl) {
+            $imagePreview = (<img src={imagePreviewUrl} style ={imgSize} />);
+          }
             return (
                 <>
                 <nav class="navbar">
@@ -79,7 +105,13 @@ export default class addPost extends Component {
                             <i class="fa fa-image" aria-hidden="true"></i> Ajouter une photo
                         </label>
                         </button>
-                        <input type="file" id="upload-image" name ="image" onChange={this.handleChangeImage.bind(this)} />
+                        <div class="btn post-actions__upload">
+                        {$imagePreview} 
+                        </div>
+                        
+                        <br/>
+                        <br/>
+                        <input type="file" id="upload-image" name ="image" onChange={this.handleChangeImage} />
 
                         <input type="submit" value="Poster" />
                     </form>

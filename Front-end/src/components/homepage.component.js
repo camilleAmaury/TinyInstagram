@@ -212,12 +212,6 @@ export default class homepage extends Component {
             this.setState({comments: [data, ...state.comments]});
           }
 
-          handleRedirectToAddPost = event => {
-            console.log(this.props.location.state.userId);
-            this.props.history.push({pathname : '/addPost', state :{userId : this.props.location.state.userId}} );
-          }
-        
-          
         render() {
             return (
                 <>
@@ -227,7 +221,7 @@ export default class homepage extends Component {
 
                     <section class="icons-section">
                         <a class="fa fa-home" href="/homepage"></a>
-                        <a class="fa fa-plus-square-o"  onClick={this.handleRedirectToAddPost.bind(this)}></a>
+                        <a class="fa fa-plus-square-o" href="/addPost"></a>
                         <a class="fa fa-user" href="/profile"></a>
                     </section>
                 </nav>

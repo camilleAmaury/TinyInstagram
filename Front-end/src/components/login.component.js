@@ -37,11 +37,9 @@ state = {
             this.state.isSignedUp = true;
             var result=res.data[1].split('user(')[1];
             var id_user =  result.substr(0, result.length-1);
+            localStorage.setItem('idUser', id_user);
             this.props.history.push({
-                pathname : '/homepage',
-                state :{
-                userId : id_user
-                }
+                pathname : '/homepage'
               } 
             );
         }
