@@ -7,8 +7,8 @@ export default class addPost extends Component {
         tag: '',
         description: '',
         image: null,
-        isPosted :false,
-        imagePreviewUrl:'',
+        imagebase64 :'',
+        imagePreviewUrl:''
       }
     
       handleChangeTag = event => {
@@ -27,7 +27,8 @@ export default class addPost extends Component {
         reader.onloadend = () => {
           this.setState({
             image: file,
-            imagePreviewUrl: reader.result
+            imagePreviewUrl: reader.result,
+            imagebase64:reader.result
           });
         }
     
@@ -40,16 +41,18 @@ export default class addPost extends Component {
         
         const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
         const urlapi = 'https://tinyinstagram-259109.appspot.com/addpost';
-        var blob = new Blob([this.state.image]);
-        var imageBlob = URL.createObjectURL(blob);
 
         axios.get(PROXY_URL+urlapi,{
             params: {
                 description: this.state.description,
                 id_user: localStorage.getItem('idUser'),
-                picture : imageBlob,
+                picture : JSON.stringify(this.state.imagebase64),
                 tags: this.state.tag
-              }
+              },
+              headers: {
+                'Content-Type': 'multipart/form-data',
+                'X-Requested-With': 'XMLHttpRequest'
+            }
             })
            
           .then(res => {

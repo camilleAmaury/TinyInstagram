@@ -61,38 +61,6 @@ class ActionBar extends React.Component {
     }
   }
   
-  class CommentBox extends React.Component {
-    constructor(){
-      super();
-      this.state = {
-        user: "codepen.person",
-        comment: null
-      }
-    }
-    
-    updateComment(e) {
-      this.setState({[e.target.name] : e.target.value});
-    }
-    
-    submitComment = () => {
-      let comment = {...this.state};
-      if(comment.comment !== null || comment.comment === ""){
-        this.props.submit(comment);
-        this.setState({comment: ""});
-      }
-    }
-    
-    render() {
-      let buttonClass = this.state.comment === null ||  this.state.comment === ""?  "" : "postable";
-      return (
-        <>
-          <input name="comment" placeholder="Add a comment..." value={this.state.comment} default="comment" onChange={ e => { this.updateComment(e) }}/>
-          <button className={buttonClass} onClick={this.submitComment}>Post</button>
-        </>
-      );
-    }
-  }
-  
   class CommentController extends React.Component {
     render() {
       return (
@@ -112,8 +80,7 @@ class Post extends React.Component {
         this.state = {
             likes: 100,
             poster: {
-              name: "",
-              profile_picture: ""
+              name: ""
             },
             image: "",
             comments: []
@@ -131,31 +98,25 @@ class Post extends React.Component {
           this.setState({likes: this.state.likes - 1});
         }
       }
-      
-      updateComments = (data) => {
-        console.log("updating comments"); 
-        let state = this.state;
-        console.log(data);
-        this.setState({comments: [data, ...state.comments]});
-      }
+
     render() {
+      const data =this.state.image;
         return (
             
-            <div className="card">
-            <div className="card-top">
-              <a className="card-poster-image-container">
-                <img className="user-pfp" src={this.state.poster.profile_picture}/>
-              </a>
-              <a className="card-poster-name">{this.state.poster.name}</a>
-            </div>
-            <div className="card-image-container">
-              <img src={this.state.image}></img>
-            </div>
-            <div className="card-middle">
-              <ActionBar like={this.likeButton}/>
-              <LikeCounter likes={this.state.likes} />
-            </div>
-          </div>
+      <div className="card">
+        <div className="card-top">
+          <a className="card-poster-name">{this.state.poster.name}</a>
+        </div>
+        <div className="card-image-container">
+          <img src={this.state.image}></img>
+        </div>
+        <div className="card-middle">
+          <ActionBar like={this.likeButton}/>
+          <LikeCounter likes={this.state.likes} />
+          <CommentController comments={this.state.comments}/>
+        </div>
+
+      </div>
 
         );
     }
@@ -166,52 +127,48 @@ export default class homepage extends Component {
 
   
     state = {
-        posts: [
-          {
-            likes: 100,
-            poster: {
-              name: "taha",
-              profile_picture: "https://placeimg.com/100/100/animals"
-            },
-            image: "https://yourmusiconline.it/uploads/products/images/f/ff09ab6498febd976409702901e881d78d510974_m.jpg",
-            comments: [
-              { user: "comment_dude", comment: "This is a good pic!" },
-              { user: "bruh.guy", comment: "Bruh, what is this picture?" }
-            ]
-          },
-          {
-            likes: 2,
-            poster: {
-              name: "marwa",
-              profile_picture: "https://placeimg.com/100/100/animals"
-            },
-            image: "https://placeimg.com/650/650/animals/sepia?t=1564211187934",
-            comments: [
-              { user: "comment_dude", comment: "This is a good pic!" },
-              { user: "bruh.guy", comment: "Bruh, what is this picture?" }
-            ]
-          }
-        ]
+        posts: [ ]
       }
-          componentDidMount() {
-            this.setState({...this.props.postData});
-          }
-          
-          likeButton = (liked) => {
-            if (liked) {
-              this.setState({likes: this.state.likes + 1});
-            } else {
-              this.setState({likes: this.state.likes - 1});
-            }
-          }
-          
-          updateComments = (data) => {
-            console.log("updating comments"); 
-            let state = this.state;
-            console.log(data);
-            this.setState({comments: [data, ...state.comments]});
-          }
+        
+      componentDidMount(){
+        
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const url ="https://tinyinstagram-259109.appspot.com/getposts?min=-1&max=2";
+        axios.get(proxyurl+url)
+            .then(res => {
+                    console.log(res.data.length);
 
+                    for (let i = 0; i < res.data.length; i++) {
+                            
+                            var post = {
+                              likes: 0,
+                              poster: {
+                                name: res.data[i][3]
+                              },
+                              image: res.data[i][4],
+                              comments: [
+                                { user: res.data[i][2], comment: res.data[i][5]}
+                              ]
+                            };
+                            this.state.posts.push(post)
+                            
+                     }
+                     this.setState({posts: this.state.posts});
+              })           
+          }    
+        
+          createFil = () => {
+        
+              let filActualite = [];
+              for (let i = 0; i < this.state.posts.length; i++) {
+                  
+                filActualite.push(<Post postData={this.state.posts[i]}/>)
+                filActualite.push(<br/>)
+                
+              }
+              
+            return filActualite;
+        }
         render() {
             return (
                 <>
@@ -225,13 +182,7 @@ export default class homepage extends Component {
                         <a class="fa fa-user" href="/profile"></a>
                     </section>
                 </nav>
-                <Post postData={this.state.posts[0]}/>
-                <br/>
-                <Post postData={this.state.posts[1]}/>
-                                <br/>
-                <Post postData={this.state.posts[0]}/>
-                <br/>
-                <Post postData={this.state.posts[0]}/>
+                {this.createFil()}
                 </>
             );
         }
