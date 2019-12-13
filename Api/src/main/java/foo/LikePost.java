@@ -32,7 +32,7 @@ import com.google.appengine.repackaged.com.google.datastore.v1.PropertyFilter;
 public class LikePost extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String id_user = request.getParameter("id_user");
         String id_post = request.getParameter("id_post");
 

@@ -45,11 +45,7 @@ handlers:
   script: unused
   login: optional
   secure: optional
-- url: /petition
-  script: unused
-  login: optional
-  secure: optional
-- url: /pquery
+- url: /main
   script: unused
   login: optional
   secure: optional
@@ -61,10 +57,6 @@ handlers:
   script: unused
   login: optional
   secure: optional
-- url: /hello
-  script: unused
-  login: optional
-  secure: optional
 - url: /getposts
   script: unused
   login: optional
@@ -73,31 +65,7 @@ handlers:
   script: unused
   login: optional
   secure: optional
-- url: /friends
-  script: unused
-  login: optional
-  secure: optional
-- url: /query
-  script: unused
-  login: optional
-  secure: optional
-- url: /fb
-  script: unused
-  login: optional
-  secure: optional
 - url: /follow
-  script: unused
-  login: optional
-  secure: optional
-- url: /counttr
-  script: unused
-  login: optional
-  secure: optional
-- url: /countsh
-  script: unused
-  login: optional
-  secure: optional
-- url: /count
   script: unused
   login: optional
   secure: optional
