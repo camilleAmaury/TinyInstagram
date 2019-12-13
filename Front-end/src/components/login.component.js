@@ -35,8 +35,7 @@ state = {
       .then(res => {
         if (res.data[0] == 1) {
             this.state.isSignedUp = true;
-            var result=res.data[1].split('user(')[1];
-            var id_user =  result.substr(0, result.length-1);
+            let id_user = res.data[1].replace("user(", "").replace(")", "");
             localStorage.setItem('idUser', id_user);
             this.props.history.push({
                 pathname : '/homepage'
@@ -69,15 +68,15 @@ state = {
 
     </form>
 
-    <div class="divider"><b>OU</b></div>
+    <div className="divider"><b>OU</b></div>
 
-    <div class="forgotwrapper">
-        <div class="forgot"><a href="/inscription">
+    <div className="forgotwrapper">
+        <div className="forgot"><a href="/inscription">
     Vous n'avez pas de compte?</a></div>
     </div>
 
     <br/> { this.state.IsError &&
-    <div class="alert alert-danger alert-dismissible fade show">
+    <div className="alert alert-danger alert-dismissible fade show">
         <strong>Error!</strong> Mot de passe ou email incorrect !
     </div> }
 </div>
