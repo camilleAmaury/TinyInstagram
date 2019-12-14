@@ -2,6 +2,22 @@ import React, { Component } from "react";
 import axios from 'axios';
 import './addPost-stylesheet.css'
 
+function base64ToBlob(x) {
+  var dataURI = x;
+  var byteString = atob(dataURI.split(',')[1]);
+  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+  
+  var ab = new ArrayBuffer(byteString.length);
+  var ia = new Uint8Array(ab);
+
+  for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+  }
+
+  var bb = new Blob([ab]);
+  return bb;
+}
+
 export default class addPost extends Component {
     state = {
         tag: '',
@@ -46,7 +62,7 @@ export default class addPost extends Component {
             params: {
                 description: this.state.description,
                 id_user: localStorage.getItem('idUser'),
-                picture : JSON.stringify(this.state.imagebase64),
+                picture : base64ToBlob(this.state.imagebase64),
                 tags: this.state.tag
               },
               headers: {
@@ -85,6 +101,7 @@ export default class addPost extends Component {
           }
             return (
                 <>
+                <div className="App">
                 <nav class="navbar">
                     <section class="logo-section"><img class="logo" src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png" />
                         <div></div><img class="logoname" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" /></section>
@@ -123,6 +140,7 @@ export default class addPost extends Component {
                     { this.state.isPosted && <div class="alert alert-success" role="alert">
                     Le post est crée avec succès
                   </div> }
+                </div>
                 </div>
             </>
             );

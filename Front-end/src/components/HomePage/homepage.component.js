@@ -31,7 +31,7 @@ export default class HomePage extends Component {
             },
             image: res.data[i][4],
             comments: [
-              { user: res.data[i][2], comment: res.data[i][5] }
+              { user: res.data[i][5], comment: res.data[i][2] }
             ]
           };
           this.state.posts.push(post)

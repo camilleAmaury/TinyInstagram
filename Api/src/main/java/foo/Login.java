@@ -55,7 +55,7 @@ public class Login extends HttpServlet {
         String[] res = new String[2];
         if(result.size() == 1){
             res[0] = "1";
-            res[1] = "";
+            res[1] = result.get(0).getKey().toString();
         }else{
             res[0] = "0";
             res[1] = "Mot de passe ou email incorrect.";

@@ -31,11 +31,12 @@ import com.google.appengine.repackaged.com.google.datastore.v1.PropertyFilter;
 public class AddPost extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String description = request.getParameter("description");
         String id_user = request.getParameter("id_user");
         String picture = request.getParameter("picture"); // blob format
         String tags = request.getParameter("tags");
+        Key keyUser = KeyFactory.createKey("user", Long.parseLong(id_user));
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
@@ -51,12 +52,15 @@ public class AddPost extends HttpServlet {
 
         if (!description.isEmpty() && !id_user.isEmpty() && !picture.isEmpty() && !tags.isEmpty()) {
             DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-
+            Calendar calendarTwoAgo = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+            Date d = calendarTwoAgo.getTime();
             Entity e = new Entity("post");
             e.setProperty("description", description);
             e.setProperty("id_user", id_user);
             e.setProperty("picture", picture);
             e.setProperty("tags", tags);
+            e.setProperty("date", d);
+            e.setProperty("id_user", keyUser);
             datastore.put(e);
             res[0] = "1";
             res[1] = "";

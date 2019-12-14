@@ -11,7 +11,7 @@ import AddPost from "./components/addPost.component";
 
 function App() {
   return (<Router>
-    <div className="App">
+    
 
           <Switch>
             <Route exact path='/' component={Login} />
@@ -21,7 +21,7 @@ function App() {
             <Route path="/profile" component={Profile} />
             <Route path="/addPost" component={AddPost} />
           </Switch>
-        </div>
+        
 
     </Router>
   );

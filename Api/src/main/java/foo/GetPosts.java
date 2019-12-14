@@ -80,8 +80,7 @@ public class GetPosts extends HttpServlet {
         String[][] res = {{}};
         Gson gson = new Gson();
         if(result.size() > 0) {
-
-            res = new String[result.size()][6];
+            res = new String[result.size()][8];
             int i = 0;
             for (Entity entity : result) {
                 res[i][0] = entity.getKey().toString();
@@ -90,8 +89,17 @@ public class GetPosts extends HttpServlet {
                 res[i][3] = entity.getProperty("id_user").toString();
                 res[i][4] = entity.getProperty("picture").toString();
                 res[i][5] = entity.getProperty("tags").toString();
-                res[i][6] = entity.getProperty("firstName").toString();
-                res[i][7] = entity.getProperty("lastName").toString();
+                Key grpKey = KeyFactory.createKey("user", Long.parseLong(entity.getProperty("id_user").toString()));
+                Query q2 = new Query("user").setFilter(new FilterPredicate("id_user", FilterOperator.EQUAL, grpKey));
+                PreparedQuery pq2 = datastore.prepare(q2);
+                List<Entity> result2 = pq2.asList(FetchOptions.Builder.withDefaults());
+                if(result2.size() > 0) {
+                    res[i][6] = result2.get(0).getProperty("firstName").toString();
+                    res[i][7] = result2.get(0).getProperty("lastName").toString();
+                }else{
+                    res[i][6] = "Unknown";
+                    res[i][7] = "Unknown";
+                }
                 i++;
 
             }
