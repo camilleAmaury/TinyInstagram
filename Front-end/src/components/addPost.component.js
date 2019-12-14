@@ -2,22 +2,6 @@ import React, { Component } from "react";
 import axios from 'axios';
 import './addPost-stylesheet.css'
 
-function base64ToBlob(x) {
-  var dataURI = x;
-  var byteString = atob(dataURI.split(',')[1]);
-  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
-  
-  var ab = new ArrayBuffer(byteString.length);
-  var ia = new Uint8Array(ab);
-
-  for (var i = 0; i < byteString.length; i++) {
-      ia[i] = byteString.charCodeAt(i);
-  }
-
-  var bb = new Blob([ab]);
-  return bb;
-}
-
 export default class addPost extends Component {
     state = {
         tag: '',
@@ -62,18 +46,13 @@ export default class addPost extends Component {
             params: {
                 description: this.state.description,
                 id_user: localStorage.getItem('idUser'),
-                picture : base64ToBlob(this.state.imagebase64),
+                picture : this.state.imagebase64,
                 tags: this.state.tag
-              },
-              headers: {
-                'Content-Type': 'multipart/form-data',
-                'X-Requested-With': 'XMLHttpRequest'
-            }
+              }
             })
            
           .then(res => {
             if (res.data[0] == 1) {
-                this.state.isPosted = true;
                 this.props.history.push({
                   pathname : '/homepage'
                 }) 
@@ -136,10 +115,6 @@ export default class addPost extends Component {
                         <input type="submit" value="Poster" />
                     </form>
 
-                    <br/>
-                    { this.state.isPosted && <div class="alert alert-success" role="alert">
-                    Le post est crée avec succès
-                  </div> }
                 </div>
                 </div>
             </>
