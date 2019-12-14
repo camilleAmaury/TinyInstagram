@@ -32,6 +32,7 @@ export default class Post extends React.Component {
       .then(res => {
         let data = this.props.postData;
         this.props.postData.likes = parseInt(res.data[0]);
+        console.log(res.data[1]);
         this.props.postData.liked = parseInt(res.data[1]) == 1;
         this.setState({ ...this.props.postData });
       });
@@ -39,9 +40,9 @@ export default class Post extends React.Component {
 
   likeButton = (liked) => {
     if (liked) {
-      this.setState({ likes: this.state.likes + 1 });
+      this.setState({ likes: this.state.likes + 1, liked:liked });
     } else {
-      this.setState({ likes: this.state.likes - 1 });
+      this.setState({ likes: this.state.likes - 1, liked:liked });
     }
   }
 
@@ -57,7 +58,7 @@ export default class Post extends React.Component {
           <img src={this.props.postData.image}></img>
         </div>
         <div className="card-middle">
-          <ActionBar like={this.likeButton} id={this.props.postData.id} liked={this.props.postData.liked} />
+          <ActionBar like={this.likeButton} id={this.props.postData.id} liked={this.state.liked} />
           <LikeCounter likes={this.state.likes} />
           <CommentController comments={this.props.postData.comments} />
         </div>

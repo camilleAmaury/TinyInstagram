@@ -6,7 +6,6 @@ export default class ActionBar extends React.Component {
   constructor() {
     super();
     this.state = {
-      liked: false,
       marked: false
     }
   }
@@ -18,16 +17,16 @@ export default class ActionBar extends React.Component {
   toggleLike = () => {
     // query the server to post the like
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url_like = "https://tinyinstagram-259109.appspot.com/likepost";
+    const url_likes = "https://tinyinstagram-259109.appspot.com/likepost?id_post=";
+    const url_like2 = "&id_user=";
     // we get the number of likes for this post_id
     // --> si false on ajoute, si true on retire --> voir requête API : this.state.liked
-    axios.post(proxyurl + url_like, {"id_user":localStorage.getItem('idUser'), "id_post":this.props.id})
+    axios.get(proxyurl + url_likes + this.props.id + url_like2 + localStorage.getItem('idUser'))
       .then(res => {
         console.log(res.data)
         if(res.data[0]==1){
-          let liked = !this.state.liked;
+          let liked = !this.props.liked;
           this.props.like(liked);
-          this.setState({ liked: liked });
         }else{
           // ne se passe rien car le serveur n'a pas répondu correctement
         }
@@ -46,7 +45,7 @@ export default class ActionBar extends React.Component {
   render() {
     return (
       <div className="card-action-bar">
-        <a onClick={this.toggleLike}><i className={this.state.liked ? "fa fa-heart" : "fa fa-heart-o"} /></a>
+        <a onClick={this.toggleLike}><i className={this.props.liked ? "fa fa-heart" : "fa fa-heart-o"} /></a>
       </div>
     )
   }
