@@ -42,8 +42,8 @@ export default class addPost extends Component {
         const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
         const urlapi = 'https://tinyinstagram-259109.appspot.com/addpost';
 
-        axios.get(PROXY_URL+urlapi,{
-            params: {
+        axios.post(PROXY_URL+urlapi,{
+            data: {
                 description: this.state.description,
                 id_user: localStorage.getItem('idUser'),
                 picture : this.state.imagebase64,
