@@ -52,7 +52,7 @@ export default class Post extends React.Component {
 
       <div className="card" id={this.props.postData.id}>
         <div className="card-top">
-          <a className="card-poster-name" id={this.props.postData.id}>{this.props.postData.name}</a>
+          <a className="card-poster-name" id={this.props.postData.id}>{this.state.poster.name}</a>
         </div>
         <div className="card-image-container">
           <img src={this.props.postData.image}></img>
