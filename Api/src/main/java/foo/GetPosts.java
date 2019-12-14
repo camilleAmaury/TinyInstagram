@@ -90,6 +90,8 @@ public class GetPosts extends HttpServlet {
                 res[i][3] = entity.getProperty("id_user").toString();
                 res[i][4] = entity.getProperty("picture").toString();
                 res[i][5] = entity.getProperty("tags").toString();
+                res[i][6] = entity.getProperty("firstName").toString();
+                res[i][7] = entity.getProperty("lastName").toString();
                 i++;
 
             }
