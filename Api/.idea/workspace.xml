@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="584677a1-8085-43a0-adb9-0d78516a2d0c" name="Default Changelist" comment="" />
+    <list default="true" id="584677a1-8085-43a0-adb9-0d78516a2d0c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +35,6 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="120" />
-    <option name="y" value="-15" />
-    <option name="width" value="1750" />
-    <option name="height" value="1030" />
   </component>
   <component name="ProjectId" id="1Uy6f3A7aJ8EpNcXpgaGKom15SC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
