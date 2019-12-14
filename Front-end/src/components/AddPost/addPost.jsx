@@ -13,7 +13,7 @@ export default class AddPost extends Component {
     image: null,
     imagebase64: '',
     imagePreviewUrl: '',
-    redirect_homepage:false
+    redirect_homepage: false
   }
 
   handleChangeTag = event => {
@@ -47,23 +47,23 @@ export default class AddPost extends Component {
     const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
     const urlapi = 'https://tinyinstagram-259109.appspot.com/addpost';
 
-    axios.post(PROXY_URL+urlapi,{
-        data: {
-            description: this.state.description,
-            id_user: localStorage.getItem('idUser'),
-            picture : this.state.imagebase64,
-            tags: this.state.tag
-          }
-        })
-       
+    axios.post(PROXY_URL + urlapi, {
+      data: {
+        description: this.state.description,
+        id_user: localStorage.getItem('idUser'),
+        picture: this.state.imagebase64,
+        tags: this.state.tag
+      }
+    })
+
       .then(res => {
         if (res.data[0] == 1) {
-            this.props.history.push({
-              pathname : '/homepage'
-            }) 
+          this.props.history.push({
+            pathname: '/homepage'
+          })
         }
         else {
-            console.log(res);
+          console.log(res);
         }
       })
       .catch(function (error) {
@@ -98,7 +98,7 @@ export default class AddPost extends Component {
               <button type="button" class="btn post-actions__upload attachments--btn">
                 <label for="upload-image" class="post-actions__label">
                   <i class="fa fa-image" aria-hidden="true"></i> Ajouter une photo
-                        </label>
+                </label>
               </button>
               <div class="btn post-actions__upload">
                 {$imagePreview}
@@ -112,7 +112,7 @@ export default class AddPost extends Component {
             </form>
 
           </div>
-          {this.state.redirect_homepage ? <Redirect to='/homepage'/> : ''}
+          {this.state.redirect_homepage ? <Redirect to='/homepage' /> : ''}
         </div>
       </>
     );

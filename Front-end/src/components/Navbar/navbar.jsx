@@ -14,7 +14,7 @@ export default class Navbar extends Component {
           <section className="icons-section">
             <Link className={"fa fa-home"} to={`/homepage`}></Link>
             <Link className={"fa fa-plus-square-o"} to={`/addpost`}></Link>
-            <Link className={"fa fa-user"} to={`/profile`}></Link>
+            <Link className={"fa fa-user"} to={`/profile/${localStorage.getItem('idUser')}`}></Link>
           </section>
         </nav>
       </>

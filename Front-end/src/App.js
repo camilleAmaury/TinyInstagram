@@ -25,9 +25,7 @@ function App() {
       <Route exact path="/homepage">
         <HomePage />
       </Route>
-      <Route exact path="/profile">
-        <Profile user={-1}/>
-      </Route>
+      <Route exact path="/profile/:user" component={Profile}></Route>
       <Route exact path="/addpost">
         <AddPost />
       </Route>
