@@ -26,7 +26,7 @@ function App() {
         <HomePage />
       </Route>
       <Route exact path="/profile">
-        <Profile />
+        <Profile user={-1}/>
       </Route>
       <Route exact path="/addpost">
         <AddPost />
