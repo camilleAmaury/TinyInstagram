@@ -63,7 +63,7 @@ export default class Profile extends Component {
                 <main>
                     <div class="container">
                         <div class="gallery">
-                            <div class="gallery-item" tabindex="0">
+                            <div class="gallery-item" tabIndex="0">
                                 <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="" />
                                 <div class="gallery-item-info">
                                     <ul>
@@ -72,7 +72,7 @@ export default class Profile extends Component {
                                     </ul>
                                 </div>
                             </div>
-                            <div class="gallery-item" tabindex="0">
+                            <div class="gallery-item" tabIndex="0">
                                 <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="" />
                                 <div class="gallery-item-info">
                                     <ul>
@@ -81,7 +81,7 @@ export default class Profile extends Component {
                                     </ul>
                                 </div>
                             </div>
-                            <div class="gallery-item" tabindex="0">
+                            <div class="gallery-item" tabIndex="0">
                                 <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="" />
                                 <div class="gallery-item-info">
                                     <ul>

@@ -12,9 +12,9 @@ export default class Navbar extends Component {
             <div></div><img className="logoname" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" /></section>
 
           <section className="icons-section">
-            <a className="fa fa-home"><Link to={`/homepage`}></Link></a>
-            <a className="fa fa-plus-square-o"><Link to={`/addpost`}></Link></a>
-            <a className="fa fa-user"><Link to={`/profile`}></Link></a>
+            <Link className={"fa fa-home"} to={`/homepage`}></Link>
+            <Link className={"fa fa-plus-square-o"} to={`/addpost`}></Link>
+            <Link className={"fa fa-user"} to={`/profile`}></Link>
           </section>
         </nav>
       </>
