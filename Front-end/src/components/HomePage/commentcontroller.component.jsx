@@ -10,7 +10,7 @@ export default class CommentController extends React.Component {
             <>
                 <div className="poster-comment"></div>
                 <div className="post-comments">
-                    {this.props.comments.map((comment) => <Comment user={comment.user} comment={comment.comment} />)}
+                    {this.props.comments.map((comment, i) => <Comment key={i} user={comment.user} comment={comment.comment} />)}
                 </div>
             </>
         );

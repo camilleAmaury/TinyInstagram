@@ -27,12 +27,13 @@ export default class HomePage extends Component {
             date: res.data[i][1],
             poster: {
               id: res.data[i][3].replace("user(", "").replace(")", ""),
-              name: "Jean" + " " + "Claude" //à remplacer en temps voulu par --> 'name : res.data[i][6] + " " + res.data[i][7]'
+              name : res.data[i][6] + " " + res.data[i][7]
             },
             image: res.data[i][4],
             comments: [
               { user: res.data[i][5], comment: res.data[i][2] }
-            ]
+            ],
+            liked:false
           };
           this.state.posts.push(post)
 
@@ -41,19 +42,6 @@ export default class HomePage extends Component {
         
       }
     );
-  }
-
-  createFil = () => {
-
-    let filActualite = [];
-    for (let i = 0; i < this.state.posts.length; i++) {
-
-      filActualite.push(<Post postData={this.state.posts[i]} />)
-      filActualite.push(<br />)
-
-    }
-
-    return filActualite;
   }
   render() {
     return (
@@ -68,7 +56,7 @@ export default class HomePage extends Component {
             <a className="fa fa-user" href="/profile"></a>
           </section>
         </nav>
-        {this.createFil()}
+        {this.state.posts.map((post, i) => <Post key={i} postData={post} />)}
       </>
     );
   }

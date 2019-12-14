@@ -18,18 +18,21 @@ export default class Post extends React.Component {
         name: ""
       },
       image: "",
-      comments: []
+      comments: [],
+      liked:false
     }
   }
 
   componentDidMount = () => {
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url_likes = "https://tinyinstagram-259109.appspot.com/getlike?id_post=";
+    const url_like2 = "&id_user="
     // we get the number of likes for this post_id
-    axios.get(proxyurl + url_likes + this.props.postData.id)
+    axios.get(proxyurl + url_likes + this.props.postData.id + url_like2 + localStorage.getItem('idUser'))
       .then(res => {
         let data = this.props.postData;
         this.props.postData.likes = parseInt(res.data[0]);
+        this.props.postData.liked = parseInt(res.data[1]) == 1;
         this.setState({ ...this.props.postData });
       });
   }
@@ -46,17 +49,17 @@ export default class Post extends React.Component {
     const data = this.state.image;
     return (
 
-      <div className="card" id={this.state.id}>
+      <div className="card" id={this.props.postData.id}>
         <div className="card-top">
-          <a className="card-poster-name" id={this.state.poster.id}>{this.state.poster.name}</a>
+          <a className="card-poster-name" id={this.props.postData.id}>{this.props.postData.name}</a>
         </div>
         <div className="card-image-container">
-          <img src={this.state.image}></img>
+          <img src={this.props.postData.image}></img>
         </div>
         <div className="card-middle">
-          <ActionBar like={this.likeButton} id={this.state.id} />
+          <ActionBar like={this.likeButton} id={this.props.postData.id} liked={this.props.postData.liked} />
           <LikeCounter likes={this.state.likes} />
-          <CommentController comments={this.state.comments} />
+          <CommentController comments={this.props.postData.comments} />
         </div>
 
       </div>

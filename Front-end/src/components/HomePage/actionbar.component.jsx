@@ -12,17 +12,16 @@ export default class ActionBar extends React.Component {
   }
 
   componentDidMount = () =>{
-
+      this.setState({liked:this.props.liked})
   }
 
   toggleLike = () => {
     // query the server to post the like
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url_like = "https://tinyinstagram-259109.appspot.com/likepost?id_post=";
-    const url_like2 = "&id_user="
+    const url_like = "https://tinyinstagram-259109.appspot.com/likepost";
     // we get the number of likes for this post_id
     // --> si false on ajoute, si true on retire --> voir requête API : this.state.liked
-    axios.get(proxyurl + url_like + this.props.id + url_like2 + localStorage.getItem('idUser'))
+    axios.post(proxyurl + url_like, {"id_user":localStorage.getItem('idUser'), "id_post":this.props.id})
       .then(res => {
         console.log(res.data)
         if(res.data[0]==1){
