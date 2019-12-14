@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import axios from 'axios';
+
+import Navbar from '../Navbar/navbar';
+
 import './profile-stylesheet.css'
 
 
@@ -15,33 +18,24 @@ export default class Profile extends Component {
     }
 
     componentDidMount = () => {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url_profile = "https://tinyinstagram-259109.appspot.com/getprofile?id_user=";
-        // we get the number of likes for this post_id
-        axios.get(proxyurl + url_profile + localStorage.getItem('idUser'))
-          .then(res => {
-            let data = this.props.postData;
-            this.props.postData.likes = parseInt(res.data[0]);
-            console.log(res.data[1]);
-            this.props.postData.liked = parseInt(res.data[1]) == 1;
-            this.setState({ ...this.props.postData });
-          });
+        // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        // const url_profile = "https://tinyinstagram-259109.appspot.com/getprofile?id_user=";
+        // // we get the number of likes for this post_id
+        // axios.get(proxyurl + url_profile + localStorage.getItem('idUser'))
+        //   .then(res => {
+        //     let data = this.props.postData;
+        //     this.props.postData.likes = parseInt(res.data[0]);
+        //     console.log(res.data[1]);
+        //     this.props.postData.liked = parseInt(res.data[1]) == 1;
+        //     this.setState({ ...this.props.postData });
+        //   });
       }
 
 
     render() {
         return (
             <>
-                <nav class="navbar">
-                    <section class="logo-section"><img class="logo" src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png" />
-                        <div></div><img class="logoname" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" /></section>
-
-                    <section class="icons-section">
-                        <a class="fa fa-home" href="/homepage"></a>
-                        <a class="fa fa-plus-square-o" href="#"></a>
-                        <a class="fa fa-user" href="#"></a>
-                    </section>
-                </nav>
+                < Navbar/>
                 <header>
                     <div class="container">
                         <div class="profile">
