@@ -94,7 +94,7 @@ npm start
 
 This part was mostly done by Aniss Bentebib.
 
-### Sign Up :
+### Sign Up
 
 ```sh
 GET BASEURL/register
@@ -117,7 +117,7 @@ return = ["0" or "1", "message"]
 
 Register a new User
 
-### Log In :
+### Log In
 
 ```sh
 GET BASEURL/login
@@ -138,7 +138,7 @@ return = ["0" or "1", "iduser" or "erromessage", "firstname", "lastname"]
 // else iduser + firstname + lastname if 1
 ```
 
-### Get Posts :
+### Get Posts
 
 ```sh
 GET BASEURL/getposts
@@ -157,7 +157,7 @@ return = [["posts"]]
 // List with all posts
 ```
 
-### Get Likes :
+### Get Likes
 
 ```sh
 GET BASEURL/getlike
@@ -176,7 +176,7 @@ return = ["122","0" or "1"]
 // 0 --> user didn't liked, 1 --> user liked
 ```
 
-### Get Profile :
+### Get Profile
 
 ```sh
 GET BASEURL/getprofile
@@ -192,7 +192,7 @@ params = {
 return = [["followers"],["followed"], ["posts"], "firstname", "lastname", ["followers' name"], ["followed's name"]]
 ```
 
-### Add Post :
+### Add Post
 
 ```sh
 GET BASEURL/addpost
@@ -213,7 +213,7 @@ return = ["0" or "1", "error message"]
 // "message" --> error message if 0
 ```
 
-### Follow :
+### Follow
 
 ```sh
 GET BASEURL/follow
@@ -234,7 +234,7 @@ return = ["0" or "1", "error message"]
 
 Note that if you have already followed an user, it will unfollow
 
-### Like :
+### Like
 
 ```sh
 GET BASEURL/likepost
@@ -256,7 +256,7 @@ return = ["0" or "1", "error message"]
 Note that if you have already liked a post, it will drop the like
 
 
-## Choice explanations :
+## Choice explanations
 
 - Like implementation : 
 	Like is a Type :
