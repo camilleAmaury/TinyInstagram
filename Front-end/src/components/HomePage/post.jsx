@@ -52,7 +52,7 @@ export default class Post extends Component {
     let fdp = this.state.poster.id;
     console.log("fdp",fdp)
     return (
-
+      <>
       <div className="card" id={this.props.postData.id}>
         <div className="card-top">
           <Link className="card-poster-name" id={this.state.poster.id} to={`/profile/${this.state.poster.id}`}> {this.state.poster.name}</Link>
@@ -67,7 +67,8 @@ export default class Post extends Component {
         </div>
 
       </div>
-
+      <br/>
+      </>
     );
   }
 }
