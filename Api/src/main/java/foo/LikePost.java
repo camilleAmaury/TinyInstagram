@@ -32,12 +32,13 @@ import com.google.appengine.repackaged.com.google.datastore.v1.PropertyFilter;
 public class LikePost extends HttpServlet {
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String id_user = request.getParameter("id_user");
         String id_post = request.getParameter("id_post");
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
 
 //		Entity e = new Entity("Friend", "f" + i);
 //		e.setProperty("firstName", "first" + i);
@@ -80,6 +81,10 @@ public class LikePost extends HttpServlet {
                 res[0] = "0";
                 res[1] = "L'utilisateur ou le post n'existe plus.";
             }
+        }else{
+            datastore.delete(result3.get(0).getKey());
+            res[0] = "1";
+            res[1] = "Removed";
         }
 
         response.getWriter().print(gson.toJson(res));

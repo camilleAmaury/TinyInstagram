@@ -109,11 +109,21 @@
       
     <servlet>
             
+        <servlet-name>GetProfile</servlet-name>
+            
+        <servlet-class origin="@WebServlet(foo.GetProfile):16">foo.GetProfile</servlet-class>
+            
+        <async-supported origin="@WebServlet(foo.GetProfile):17">false</async-supported>
+          
+    </servlet>
+      
+    <servlet>
+            
         <servlet-name>LikePost</servlet-name>
             
-        <servlet-class origin="@WebServlet(foo.LikePost):16">foo.LikePost</servlet-class>
+        <servlet-class origin="@WebServlet(foo.LikePost):18">foo.LikePost</servlet-class>
             
-        <async-supported origin="@WebServlet(foo.LikePost):17">false</async-supported>
+        <async-supported origin="@WebServlet(foo.LikePost):19">false</async-supported>
           
     </servlet>
       
@@ -121,9 +131,9 @@
             
         <servlet-name>Login</servlet-name>
             
-        <servlet-class origin="@WebServlet(foo.Login):18">foo.Login</servlet-class>
+        <servlet-class origin="@WebServlet(foo.Login):20">foo.Login</servlet-class>
             
-        <async-supported origin="@WebServlet(foo.Login):19">false</async-supported>
+        <async-supported origin="@WebServlet(foo.Login):21">false</async-supported>
           
     </servlet>
       
@@ -131,9 +141,9 @@
             
         <servlet-name>TinyInstagram</servlet-name>
             
-        <servlet-class origin="@WebServlet(foo.Main):20">foo.Main</servlet-class>
+        <servlet-class origin="@WebServlet(foo.Main):22">foo.Main</servlet-class>
             
-        <async-supported origin="@WebServlet(foo.Main):21">false</async-supported>
+        <async-supported origin="@WebServlet(foo.Main):23">false</async-supported>
           
     </servlet>
       
@@ -141,9 +151,9 @@
             
         <servlet-name>Register</servlet-name>
             
-        <servlet-class origin="@WebServlet(foo.Register):22">foo.Register</servlet-class>
+        <servlet-class origin="@WebServlet(foo.Register):24">foo.Register</servlet-class>
             
-        <async-supported origin="@WebServlet(foo.Register):23">false</async-supported>
+        <async-supported origin="@WebServlet(foo.Register):25">false</async-supported>
           
     </servlet>
       
@@ -152,7 +162,7 @@
   
   
   
-    <servlet-mapping origin="WebDescriptor(file:///D:/Git/TinyInstagram/Api/target/appengine-staging/WEB-INF/web.xml):29">
+    <servlet-mapping origin="WebDescriptor(file:///D:/Git/TinyInstagram/Api/target/appengine-staging/WEB-INF/web.xml):31">
             
         <servlet-name>EndpointsServlet</servlet-name>
             
@@ -189,6 +199,14 @@
         <servlet-name>GetPosts</servlet-name>
             
         <url-pattern>/getposts</url-pattern>
+          
+    </servlet-mapping>
+      
+    <servlet-mapping>
+            
+        <servlet-name>GetProfile</servlet-name>
+            
+        <url-pattern>/getprofile</url-pattern>
           
     </servlet-mapping>
       
@@ -244,7 +262,7 @@
       
     <locale-encoding-mapping-list>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):33">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):35">
                   
             <locale>de</locale>
                   
@@ -252,7 +270,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):34">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):36">
                   
             <locale>no</locale>
                   
@@ -260,7 +278,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):35">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):37">
                   
             <locale>be</locale>
                   
@@ -268,7 +286,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):36">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):38">
                   
             <locale>fi</locale>
                   
@@ -276,7 +294,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):37">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):39">
                   
             <locale>ru</locale>
                   
@@ -284,7 +302,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):38">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):40">
                   
             <locale>pt</locale>
                   
@@ -292,7 +310,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):39">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):41">
                   
             <locale>bg</locale>
                   
@@ -300,7 +318,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):40">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):42">
                   
             <locale>lt</locale>
                   
@@ -308,7 +326,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):41">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):43">
                   
             <locale>hr</locale>
                   
@@ -316,7 +334,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):42">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):44">
                   
             <locale>lv</locale>
                   
@@ -324,7 +342,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):43">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):45">
                   
             <locale>fr</locale>
                   
@@ -332,7 +350,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):44">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):46">
                   
             <locale>hu</locale>
                   
@@ -340,7 +358,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):45">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):47">
                   
             <locale>zh_TW</locale>
                   
@@ -348,7 +366,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):46">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):48">
                   
             <locale>sh</locale>
                   
@@ -356,7 +374,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):47">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):49">
                   
             <locale>uk</locale>
                   
@@ -364,7 +382,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):48">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):50">
                   
             <locale>sk</locale>
                   
@@ -372,7 +390,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):49">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):51">
                   
             <locale>sl</locale>
                   
@@ -380,7 +398,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):50">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):52">
                   
             <locale>ca</locale>
                   
@@ -388,7 +406,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):51">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):53">
                   
             <locale>mk</locale>
                   
@@ -396,7 +414,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):52">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):54">
                   
             <locale>sq</locale>
                   
@@ -404,7 +422,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):53">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):55">
                   
             <locale>sr</locale>
                   
@@ -412,7 +430,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):54">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):56">
                   
             <locale>sv</locale>
                   
@@ -420,7 +438,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):55">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):57">
                   
             <locale>ko</locale>
                   
@@ -428,7 +446,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):56">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):58">
                   
             <locale>el</locale>
                   
@@ -436,7 +454,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):57">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):59">
                   
             <locale>en</locale>
                   
@@ -444,7 +462,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):58">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):60">
                   
             <locale>is</locale>
                   
@@ -452,7 +470,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):59">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):61">
                   
             <locale>it</locale>
                   
@@ -460,7 +478,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):60">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):62">
                   
             <locale>es</locale>
                   
@@ -468,7 +486,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):61">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):63">
                   
             <locale>iw</locale>
                   
@@ -476,7 +494,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):62">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):64">
                   
             <locale>zh</locale>
                   
@@ -484,7 +502,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):63">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):65">
                   
             <locale>et</locale>
                   
@@ -492,7 +510,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):64">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):66">
                   
             <locale>cs</locale>
                   
@@ -500,7 +518,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):65">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):67">
                   
             <locale>ar</locale>
                   
@@ -508,7 +526,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):66">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):68">
                   
             <locale>ja</locale>
                   
@@ -516,7 +534,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):67">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):69">
                   
             <locale>pl</locale>
                   
@@ -524,7 +542,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):68">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):70">
                   
             <locale>da</locale>
                   
@@ -532,7 +550,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):69">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):71">
                   
             <locale>ro</locale>
                   
@@ -540,7 +558,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):70">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):72">
                   
             <locale>nl</locale>
                   
@@ -548,7 +566,7 @@
                 
         </locale-encoding-mapping>
             
-        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):71">
+        <locale-encoding-mapping origin="DefaultsDescriptor(file:///C:/Users/scorp/AppData/Local/Google/Cloud%20SDK/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/docs/webdefault.xml):73">
                   
             <locale>tr</locale>
                   

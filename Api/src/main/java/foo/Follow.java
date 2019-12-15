@@ -40,6 +40,7 @@ public class Follow extends HttpServlet {
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
 
 //		Entity e = new Entity("Friend", "f" + i);
 //		e.setProperty("firstName", "first" + i);
@@ -50,22 +51,36 @@ public class Follow extends HttpServlet {
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         Query q = new Query("user")
                 .setFilter(CompositeFilterOperator.or(
-                        new FilterPredicate("__key__", FilterOperator.EQUAL, id1),
-                        new FilterPredicate("__key__", FilterOperator.EQUAL, id2)));
+                        new FilterPredicate("__key__", FilterOperator.EQUAL, keyUser1),
+                        new FilterPredicate("__key__", FilterOperator.EQUAL, keyUser2)));
         PreparedQuery pq = datastore.prepare(q);
         List<Entity> result = pq.asList(FetchOptions.Builder.withDefaults());
+
+        Query q2 = new Query("follow")
+                .setFilter(CompositeFilterOperator.and(
+                        new FilterPredicate("id1", FilterOperator.EQUAL, keyUser1),
+                        new FilterPredicate("id2", FilterOperator.EQUAL, keyUser2)));
+        PreparedQuery pq2 = datastore.prepare(q2);
+        List<Entity> result2 = pq2.asList(FetchOptions.Builder.withDefaults());
+
         Gson gson = new Gson();
         String[] res = new String[2];
-        if(result.size() == 2){
-            Entity e = new Entity("follow");
-            e.setProperty("id1", keyUser1);
-            e.setProperty("id2", keyUser2);
-            datastore.put(e);
-            res[0] = "1";
-            res[1] = "";
+        if(result2.size() == 0) {
+            if (result.size() == 2) {
+                Entity e = new Entity("follow");
+                e.setProperty("id1", keyUser1);
+                e.setProperty("id2", keyUser2);
+                datastore.put(e);
+                res[0] = "1";
+                res[1] = "";
+            } else {
+                res[0] = "0";
+                res[1] = "Un des deux utilisateurs n'existe pas";
+            }
         }else{
-            res[0] = "0";
-            res[1] = "Un des deux utilisateurs n'existe pas";
+            datastore.delete(result2.get(0).getKey());
+            res[0] = "1";
+            res[1] = "Unfollow";
         }
         response.getWriter().print(gson.toJson(res));
 

@@ -31,7 +31,7 @@ import com.google.appengine.repackaged.com.google.datastore.v1.PropertyFilter;
 public class Register extends HttpServlet {
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
@@ -39,6 +39,7 @@ public class Register extends HttpServlet {
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
 
 //		Entity e = new Entity("Friend", "f" + i);
 //		e.setProperty("firstName", "first" + i);

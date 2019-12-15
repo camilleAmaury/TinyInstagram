@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.blobstore.BlobKey;
+import com.google.appengine.api.blobstore.BlobstoreService;
+import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 
@@ -31,7 +34,7 @@ import com.google.appengine.repackaged.com.google.datastore.v1.PropertyFilter;
 public class AddPost extends HttpServlet {
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String description = request.getParameter("description");
         String id_user = request.getParameter("id_user");
         String picture = request.getParameter("picture"); // blob format
@@ -40,6 +43,7 @@ public class AddPost extends HttpServlet {
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
 
 //		Entity e = new Entity("Friend", "f" + i);
 //		e.setProperty("firstName", "first" + i);

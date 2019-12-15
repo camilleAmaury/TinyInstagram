@@ -37,6 +37,7 @@ public class GetLike extends HttpServlet {
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         Key grpKey = KeyFactory.createKey("post", Long.parseLong(id_post));
@@ -54,7 +55,7 @@ public class GetLike extends HttpServlet {
         res[0] = Integer.toString(result.size());
         res[1] = "0";
 
-        if(id_user != null || !id_user.isEmpty() || id_user != ""){
+        if(id_user != null && !id_user.isEmpty() && id_user != ""){
             Key grpKeyUser = KeyFactory.createKey("user", Long.parseLong(id_user));
             Query q2 = new Query("like")
                     .setFilter(CompositeFilterOperator.and(

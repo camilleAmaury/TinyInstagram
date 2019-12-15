@@ -37,6 +37,7 @@ public class Login extends HttpServlet {
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
 
 //		Entity e = new Entity("Friend", "f" + i);
 //		e.setProperty("firstName", "first" + i);
@@ -52,15 +53,24 @@ public class Login extends HttpServlet {
         PreparedQuery pq = datastore.prepare(q);
         List<Entity> result = pq.asList(FetchOptions.Builder.withDefaults());
         Gson gson = new Gson();
-        String[] res = new String[2];
+        String[] res = new String[4];
         if(result.size() == 1){
             res[0] = "1";
-            res[1] = result.get(0).getKey().toString();
+            res[1] = getTheKeyValue(result.get(0).getKey().toString(), "user");
+            res[2] = result.get(0).getProperty("firstName").toString();
+            res[3] = result.get(0).getProperty("lastName").toString();
         }else{
             res[0] = "0";
             res[1] = "Mot de passe ou email incorrect.";
+            res[2] = "";
+            res[3] = "";
         }
         response.getWriter().print(gson.toJson(res));
 
     }
+
+    String getTheKeyValue(String key, String type){
+        return key.replace("(","").replace(")","").replace(type, "");
+    }
+
 }

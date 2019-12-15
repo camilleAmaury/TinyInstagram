@@ -57,6 +57,10 @@ handlers:
   script: unused
   login: optional
   secure: optional
+- url: /getprofile
+  script: unused
+  login: optional
+  secure: optional
 - url: /getposts
   script: unused
   login: optional

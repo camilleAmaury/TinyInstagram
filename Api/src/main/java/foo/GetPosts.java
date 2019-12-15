@@ -39,6 +39,7 @@ public class GetPosts extends HttpServlet {
         Integer max = Integer.parseInt(request.getParameter("max"));
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
 
 //		Entity e = new Entity("Friend", "f" + i);
 //		e.setProperty("firstName", "first" + i);
@@ -83,27 +84,31 @@ public class GetPosts extends HttpServlet {
             res = new String[result.size()][8];
             int i = 0;
             for (Entity entity : result) {
-                res[i][0] = entity.getKey().toString();
+                res[i][0] = getTheKeyValue(entity.getKey().toString(), "post");
                 res[i][1] = entity.getProperty("date").toString();
                 res[i][2] = entity.getProperty("description").toString();
-                res[i][3] = entity.getProperty("id_user").toString();
+                res[i][3] = getTheKeyValue(entity.getProperty("id_user").toString(), "user");
                 res[i][4] = entity.getProperty("picture").toString();
                 res[i][5] = entity.getProperty("tags").toString();
-                Key grpKey = KeyFactory.createKey("user", Long.parseLong(entity.getProperty("id_user").toString()));
-                Query q2 = new Query("user").setFilter(new FilterPredicate("id_user", FilterOperator.EQUAL, grpKey));
+                Key grpKey = KeyFactory.createKey("user", Long.parseLong(res[i][3]));
+                Query q2 = new Query("user").setFilter(new FilterPredicate("__key__", FilterOperator.EQUAL, grpKey));
                 PreparedQuery pq2 = datastore.prepare(q2);
                 List<Entity> result2 = pq2.asList(FetchOptions.Builder.withDefaults());
+                res[i][6] = "Unknown";
+                res[i][7] = "Unknown";
                 if(result2.size() > 0) {
                     res[i][6] = result2.get(0).getProperty("firstName").toString();
                     res[i][7] = result2.get(0).getProperty("lastName").toString();
-                }else{
-                    res[i][6] = "Unknown";
-                    res[i][7] = "Unknown";
                 }
+
                 i++;
 
             }
         }
         response.getWriter().print(gson.toJson(res));
+    }
+
+    String getTheKeyValue(String key, String type){
+        return key.replace("(","").replace(")","").replace(type, "");
     }
 }

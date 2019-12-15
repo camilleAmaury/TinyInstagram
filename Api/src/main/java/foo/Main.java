@@ -20,6 +20,7 @@ public class Main extends HttpServlet {
 
         response.setContentType("text/plain");
         response.setCharacterEncoding("UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
 
         response.getWriter().print("Hello App Engine!\r\n");
 
