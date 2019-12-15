@@ -146,7 +146,7 @@ GET BASEURL/getposts
 
 ```Javascript
 params = {
-	max:'...@...', // min(number of day minus curent date + max, current date)
+	max:'...', // min(number of day minus curent date + max, current date)
 	min:'...', // number of day minus current date
 	n:'...' // optionnal : return all 1 to n last posts
 }
@@ -200,7 +200,7 @@ GET BASEURL/addpost
 
 ```Javascript
 params = {
-	description:'...@...',
+	description:'...',
 	id_user:'...',
 	picture:'...',
 	tags:'...'
@@ -221,7 +221,7 @@ GET BASEURL/follow
 
 ```Javascript
 params = {
-	id1:'...@...', // users want to follow
+	id1:'...', // users want to follow
 	id2:'...' // users followed
 ```
 
