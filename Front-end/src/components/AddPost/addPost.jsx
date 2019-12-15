@@ -42,33 +42,41 @@ export default class AddPost extends Component {
 
   handleSubmit = event => {
 
-    event.preventDefault();
+      event.preventDefault();
 
-    const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
-    const urlapi = 'https://tinyinstagram-259109.appspot.com/addpost';
+      const data = new FormData()
+      data.append('file', this.state.image)
 
-    axios.post(PROXY_URL + urlapi, {
-      data: {
-        description: this.state.description,
-        id_user: localStorage.getItem('idUser'),
-        picture: this.state.imagebase64,
-        tags: this.state.tag
-      }
+    // Upload de l'image dans public/uploads utilise Node.js server proxy 
+    // pour démarrer le server (npm run server)
+    // Il faut remplacer localhost par <tinyinstagram-259109.appspot.com> lors du deploiement.
+    axios.post("http://localhost:8000/upload", data, { 
+        
     })
+    .then(res => { 
+      const urlapi = 'https://tinyinstagram-259109.appspot.com/addpost';
 
-      .then(res => {
-        if (res.data[0] == 1) {
-          this.props.history.push({
-            pathname: '/homepage'
-          })
-        }
-        else {
-          console.log(res);
+      axios.get(urlapi, {
+        params: {
+          description: this.state.description,
+          id_user: localStorage.getItem('idUser'),
+          picture: '/uploads/'+res.data.filename,
+          tags: this.state.tag
         }
       })
-      .catch(function (error) {
-        console.log(error);
-      });
+
+        .then(res => {
+          if (res.data[0] == 1) {
+            this.setState({redirect_homepage:true});
+          }
+          else {
+            console.log(res);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+  })
   }
   render() {
     const imgSize = {
