@@ -6,8 +6,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/univnantes.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/camilleAmaury/TinyInstagram">
+    <img src="images/univnantes.png" alt="Logo">
   </a>
 
   <h3 align="center">TinyInsta</h3>
