@@ -37,7 +37,6 @@ state = {
         })
     
       .then(res => {
-        console.log(res.data)
         if (res.data[0] === "1") {
             localStorage.setItem('idUser', res.data[1]);
             localStorage.setItem('prenomUser', res.data[2]);

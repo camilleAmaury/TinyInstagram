@@ -34,7 +34,6 @@ export default class Post extends Component {
     })
       .then(res => {
         this.props.postData.likes = parseInt(res.data[0]);
-        console.log(res.data);
         this.props.postData.liked = parseInt(res.data[1]) === 1;
         this.setState({ ...this.props.postData });
       });

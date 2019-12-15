@@ -24,8 +24,6 @@ export default class HomePage extends Component {
       .then(res => {
         let posts = [];
         for (let i = 0; i < res.data.length; i++) {
-          console.log("c'est moi :",localStorage.getItem("idUser"));
-          console.log("ce que tu me retournes:",res.data[i][3]);
           var post = {
             likes: -1,
             id: res.data[i][0],
