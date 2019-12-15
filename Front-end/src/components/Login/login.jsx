@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from 'react-router';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+
 import './login-stylesheet.css'
 
 export default class Login extends Component {
@@ -26,10 +27,9 @@ state = {
   handleSubmit = event => {
     event.preventDefault();
 
-    const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
     const URL = 'https://tinyinstagram-259109.appspot.com/login';
 
-    axios.get(PROXY_URL+URL,{
+    axios.get(URL,{
         params: {
             email: this.state.email,
             password: this.state.password
@@ -37,15 +37,15 @@ state = {
         })
     
       .then(res => {
-        if (res.data[0] == 1) {
-            this.state.isSignedUp = true;
-            let id_user = res.data[1].replace("user(", "").replace(")", "");
-            localStorage.setItem('idUser', id_user);
-            this.setState({redirect_homepage:true});
+        console.log(res.data)
+        if (res.data[0] === "1") {
+            localStorage.setItem('idUser', res.data[1]);
+            localStorage.setItem('prenomUser', res.data[2]);
+            localStorage.setItem('nomUser', res.data[3]);
+            this.setState({redirect_homepage:true, isSignedUp:true});
         }
         else {
-          this.state.IsError = true;
-          this.setState({redirect_login:true});
+          this.setState({redirect_login:true, IsError:true});
         }
       })
       .catch(function (error) {
@@ -56,7 +56,7 @@ state = {
     render() {
         return (
           
-<div class="login">
+<div className="login">
 
     <h1><img src="https://i.imgur.com/wvLiKam.png" width="200px" height="68px"/></h1>
 

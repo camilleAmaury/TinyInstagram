@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
-import ActionBar from './actionbar.component';
-import LikeCounter from './likecounter.component';
-import CommentController from './commentcontroller.component';
+import ActionBar from './actionbar';
+import LikeCounter from './likecounter';
+import CommentController from './commentcontroller';
 
-export default class Post extends React.Component {
+export default class Post extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,16 +24,18 @@ export default class Post extends React.Component {
   }
 
   componentDidMount = () => {
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url_likes = "https://tinyinstagram-259109.appspot.com/getlike?id_post=";
-    const url_like2 = "&id_user="
+    const url_likes = "https://tinyinstagram-259109.appspot.com/getlike";
     // we get the number of likes for this post_id
-    axios.get(proxyurl + url_likes + this.props.postData.id + url_like2 + localStorage.getItem('idUser'))
+    axios.get(url_likes, {
+      params:{
+          id_post:this.props.postData.id,
+          id_user:localStorage.getItem('idUser')
+      }
+    })
       .then(res => {
-        let data = this.props.postData;
         this.props.postData.likes = parseInt(res.data[0]);
-        console.log(res.data[1]);
-        this.props.postData.liked = parseInt(res.data[1]) == 1;
+        console.log(res.data);
+        this.props.postData.liked = parseInt(res.data[1]) === 1;
         this.setState({ ...this.props.postData });
       });
   }
@@ -48,11 +50,13 @@ export default class Post extends React.Component {
 
   render() {
     const data = this.state.image;
+    let fdp = this.state.poster.id;
+    console.log("fdp",fdp)
     return (
 
       <div className="card" id={this.props.postData.id}>
         <div className="card-top">
-          <a className="card-poster-name" id={this.props.postData.id}>{this.state.poster.name}</a>
+          <Link className="card-poster-name" id={this.state.poster.id} to={`/profile/${this.state.poster.id}`}> {this.state.poster.name}</Link>
         </div>
         <div className="card-image-container">
           <img src={this.props.postData.image}></img>

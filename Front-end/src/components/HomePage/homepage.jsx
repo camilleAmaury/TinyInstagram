@@ -5,7 +5,7 @@ import Navbar from '../Navbar/navbar';
 
 import './homepage-stylesheet.css';
 
-import Post from './post.component';
+import Post from './post';
 
 export default class HomePage extends Component {
   state = {
@@ -14,20 +14,24 @@ export default class HomePage extends Component {
 
   componentDidMount() {
 
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url_posts = "https://tinyinstagram-259109.appspot.com/getposts?min=-1&max=2";
-    axios.get(proxyurl + url_posts)
+    const url_posts = "https://tinyinstagram-259109.appspot.com/getposts";
+    axios.get(url_posts, {
+      params:{
+        min:-10,
+        max:0
+      }
+    })
       .then(res => {
-        console.log(res.data);
-
+        let posts = [];
         for (let i = 0; i < res.data.length; i++) {
-
+          console.log("c'est moi :",localStorage.getItem("idUser"));
+          console.log("ce que tu me retournes:",res.data[i][3]);
           var post = {
             likes: -1,
-            id: res.data[i][0].replace("post(", "").replace(")", ""),
+            id: res.data[i][0],
             date: res.data[i][1],
             poster: {
-              id: res.data[i][3].replace("user(", "").replace(")", ""),
+              id: res.data[i][3],
               name : res.data[i][6] + " " + res.data[i][7]
             },
             image: res.data[i][4],
@@ -36,10 +40,10 @@ export default class HomePage extends Component {
             ],
             liked:false
           };
-          this.state.posts.push(post)
+          posts.push(post)
 
         }
-        this.setState({ posts: this.state.posts });
+        this.setState({ posts: posts });
         
       }
     );

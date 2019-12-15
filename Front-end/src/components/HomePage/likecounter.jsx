@@ -1,9 +1,6 @@
 
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
-import axios from 'axios';
-
-export default class LikeCounter extends React.Component {
+export default class LikeCounter extends Component {
     render() {
         return (
             <div className="card-views">

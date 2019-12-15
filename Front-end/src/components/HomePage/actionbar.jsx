@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from 'axios';
 
-export default class ActionBar extends React.Component {
+export default class ActionBar extends Component {
   constructor() {
     super();
     this.state = {
@@ -16,15 +15,17 @@ export default class ActionBar extends React.Component {
 
   toggleLike = () => {
     // query the server to post the like
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url_likes = "https://tinyinstagram-259109.appspot.com/likepost?id_post=";
-    const url_like2 = "&id_user=";
+    const url_likes = "https://tinyinstagram-259109.appspot.com/likepost";
     // we get the number of likes for this post_id
     // --> si false on ajoute, si true on retire --> voir requête API : this.state.liked
-    axios.get(proxyurl + url_likes + this.props.id + url_like2 + localStorage.getItem('idUser'))
+    axios.get(url_likes,{
+      params:{
+        id_post:this.props.id,
+        id_user:localStorage.getItem('idUser')
+      }
+    })
       .then(res => {
-        console.log(res.data)
-        if(res.data[0]==1){
+        if(res.data[0]==="1"){
           let liked = !this.props.liked;
           this.props.like(liked);
         }else{
