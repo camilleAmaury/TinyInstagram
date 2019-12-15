@@ -127,7 +127,7 @@ export default class LikePerOneSecond extends Component {
                     <button onClick={() => this.state.isDone ? this.PrintResult() : ""}>Afficher le résultat</button>
                 </div>
                 <div>
-                    {this.state.compteur >= 10 ? <button onClick={() => this.ExportAsCSV()}>Afficher le résultat</button> : ""}
+                    {this.state.compteur >= 10 ? <button onClick={() => this.ExportAsCSV()}>télécharger le résultat</button> : ""}
                 </div>
             </div>
         );

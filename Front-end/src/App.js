@@ -10,6 +10,7 @@ import Profile from "./components/Profile/profile";
 import AddPost from "./components/AddPost/addPost";
 import CreateUsersBenchmark from './components/Benchmark/create_user';
 import LikePerOneSecond from './components/Benchmark/likeperonesecond';
+import RetrievePosts from './components/Benchmark/retrieve_posts';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
       </Route>
       <Route exact path="/likeperonesecond">
         <LikePerOneSecond />
+      </Route>
+      <Route exact path="/retrievePosts">
+        <RetrievePosts />
       </Route>
     </Switch>
   </Router>
