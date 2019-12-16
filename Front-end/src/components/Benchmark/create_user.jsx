@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import axios from 'axios';
 
 
-export default class CreateUsersBenchmark extends Component {
+export default class CreatePostsBenchmark extends Component {
     constructor() {
         super();
         this.state = {
-            compteur:10,
+            compteur:0,
             borne:500,
             step:0,
             isCreating:false,

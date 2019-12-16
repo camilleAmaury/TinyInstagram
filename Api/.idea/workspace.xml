@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="584677a1-8085-43a0-adb9-0d78516a2d0c" name="Default Changelist" comment="" />
+    <list default="true" id="584677a1-8085-43a0-adb9-0d78516a2d0c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/foo/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/foo/MainTest.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,11 +98,6 @@
       <updated>1575021571118</updated>
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="MainTest_test - 2019.12.13 at 22h 04m 24s.xml">
-      <configuration name="MainTest.test" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

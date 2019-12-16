@@ -11,7 +11,7 @@ export default class RetrievePosts extends Component {
             isLiking: false,
             isDone: false,
             time_spent: [],
-            n:10
+            n:500
         }
     }
 

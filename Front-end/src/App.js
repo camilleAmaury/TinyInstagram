@@ -9,6 +9,7 @@ import HomePage from "./components/HomePage/homepage";
 import Profile from "./components/Profile/profile";
 import AddPost from "./components/AddPost/addPost";
 import CreateUsersBenchmark from './components/Benchmark/create_user';
+import CreatePostsBenchmark from './components/Benchmark/create_posts';
 import LikePerOneSecond from './components/Benchmark/likeperonesecond';
 import RetrievePosts from './components/Benchmark/retrieve_posts';
 
@@ -34,6 +35,9 @@ function App() {
       </Route>
       <Route exact path="/createUsersBenchmark">
         <CreateUsersBenchmark />
+      </Route>
+      <Route exact path="/createPostsBenchmark">
+        <CreatePostsBenchmark />
       </Route>
       <Route exact path="/likeperonesecond">
         <LikePerOneSecond />

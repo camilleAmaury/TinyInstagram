@@ -259,16 +259,18 @@ Note that if you have already liked a post, it will drop the like
 ## Choice explanations
 
 - Like implementation : 
-	Like is a Type :
-		Entities are compounded of (iduser, idposts)
+	Like is a Kind :
+		Entities are compounded of (key:hash, properties:iduser, idposts)
 
 		Then we have a number of Entities which corresponds to the number of likes (it enables us to keep who liked what)
 		In a scaling environnement, it enables to add a lot of entities without accessing the same datas.
+		Nethertheless, as you can see in the benchmark, it seems that it is not the best way to do it since we count the number of entities.
+		One solution could be to create an array of integers for each post (size 10 to 20) and randomly increment one of the counter.
 
 
 - Follow implementation : 
-	Follow is a Type :
-		Entities are compounded of (iduserFollower, iduserFollowed)
+	Follow is a Kind :
+		Entities are compounded of (key:hash, properties:iduserFollower, iduserFollowed)
 
 		Then we have a number of Entities which corresponds to the number of followers / followed (it enables us to keep who follow who)
 		In a scaling environnement, it enables to add a lot of entities without accessing the same datas.
@@ -280,12 +282,12 @@ Note that if you have already liked a post, it will drop the like
 	Nethertheless, in a big data environnement, we should transfer the image as blob in the datastore. Else we would overcharge the react server.
 
 - Post implementation : 
-	Post is a Type:
-		Entities are compounded of (idpost, date, description, iduser, picture, tags)
+	Post is a Kind:
+		Entities are compounded of (key:idpost, properties:date, description, iduser, picture, tags)
 
 - User implementation : 
-	User is a Type:
-		Entities are compounded of (iduser, firstname, lastname, email, password)
+	User is a Kind:
+		Entities are compounded of (key:iduser, properties:firstname, lastname, email, password)
 
 
 
@@ -298,6 +300,8 @@ See the following react url, we decided to collect data via our website :
 * "BASEURL/createUsersBenchmark" --> to create multiple users
 * "BASEURL/likeperonesecond" --> to get some datas of the number like per second (time)
 * "BASEURL/retrievePosts" --> to retrieve a specified number of posts (time)
+* "BASEURL/createPostsBenchmark" --> to retrieve a specified number of posts (time)
+
 
 We decided to use R, which is one of the best language to explains dataset and visualize results.
 Moreover it enables us to use Jupyter notebook, which is a really great tool to quick implementation and markdown.
