@@ -5,6 +5,7 @@ foo\AddPost.class
 foo\Follow.class
 foo\Security.class
 foo\LikePost.class
+foo\GetUsers.class
 foo\GetLike.class
 foo\Login.class
 foo\Main.class

@@ -2,45 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="584677a1-8085-43a0-adb9-0d78516a2d0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/foo/GetProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/GetProfile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/GetProfile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/foo/GetUsers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/foo/AddPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foo/AddPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/foo/Follow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foo/Follow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/foo/GetLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foo/GetLike.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/foo/GetPosts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foo/GetPosts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/foo/LikePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foo/LikePost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/foo/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foo/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/foo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/foo/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foo/Register.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/appengine-generated/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/appengine-generated/app.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/AddPost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/AddPost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/Follow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/Follow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/GetLike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/GetLike.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/GetPosts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/GetPosts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/LikePost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/LikePost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/foo/Register.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/source-context.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/source-context.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/min-quickstart-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/min-quickstart-web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/quickstart-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/quickstart-web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/appengine-staging/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/app.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/AddPost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/AddPost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/Follow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/Follow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/GetLike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/GetLike.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/GetPosts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/GetPosts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/LikePost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/LikePost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bar-0.1.0-SNAPSHOT/WEB-INF/classes/foo/Register.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-foo.MainTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-foo.MainTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/foo.MainTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/foo.MainTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-end/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-end/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-end/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,18 +34,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/foo/AddPost.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-84">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/foo/Security.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -94,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/foo/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+            <state relative-caret-position="510">
+              <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="57" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,8 +73,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/foo/LikePost.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="86" selection-end-column="31" />
+            <state relative-caret-position="646">
+              <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/foo/GetUsers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/foo/GetLike.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+            <state relative-caret-position="425">
+              <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/foo/GetPosts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="66" column="107" selection-start-line="66" selection-start-column="107" selection-end-line="66" selection-end-column="107" />
+            <state relative-caret-position="850">
+              <caret line="79" column="73" selection-start-line="74" selection-start-column="16" selection-end-line="79" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,7 +121,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/foo/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
+            <state relative-caret-position="578">
               <caret line="60" column="70" selection-start-line="60" selection-start-column="70" selection-end-line="60" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -200,7 +179,6 @@
         <option value="$PROJECT_DIR$/src/main/java/foo/Security.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/foo/HelloAppEngineTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/foo/GetPosts.java" />
         <option value="$PROJECT_DIR$/src/main/java/foo/LikePost.java" />
         <option value="$PROJECT_DIR$/src/main/java/foo/Register.java" />
         <option value="$PROJECT_DIR$/src/main/java/foo/Main.java" />
@@ -209,6 +187,8 @@
         <option value="$PROJECT_DIR$/src/main/java/foo/GetProfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/foo/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/foo/AddPost.java" />
+        <option value="$PROJECT_DIR$/src/main/java/foo/GetPosts.java" />
+        <option value="$PROJECT_DIR$/src/main/java/foo/GetUsers.java" />
       </list>
     </option>
   </component>
@@ -231,8 +211,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -344,6 +322,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -422,9 +402,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-7" width="1488" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28081232" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30182073" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -532,6 +511,16 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index3.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/foo/AddPost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/foo/Security.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -554,8 +543,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/foo/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+        <state relative-caret-position="510">
+          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="57" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -564,8 +553,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/foo/LikePost.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="86" selection-end-column="31" />
+        <state relative-caret-position="646">
+          <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -574,8 +563,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/foo/GetLike.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        <state relative-caret-position="425">
+          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -584,8 +573,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/foo/GetPosts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="66" column="107" selection-start-line="66" selection-start-column="107" selection-end-line="66" selection-end-column="107" />
+        <state relative-caret-position="850">
+          <caret line="79" column="73" selection-start-line="74" selection-start-column="16" selection-end-line="79" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/foo/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="60" column="70" selection-start-line="60" selection-start-column="70" selection-end-line="60" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -612,20 +611,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/foo/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/foo/GetUsers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
-          <caret line="60" column="70" selection-start-line="60" selection-start-column="70" selection-end-line="60" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/foo/AddPost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
