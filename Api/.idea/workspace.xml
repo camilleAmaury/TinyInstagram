@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="584677a1-8085-43a0-adb9-0d78516a2d0c" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/foo/GetUsers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/foo/GetPosts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/foo/GetPosts.java" afterDir="false" />
@@ -20,9 +21,11 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/foo.MainTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/foo.MainTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front-end/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-end/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front-end/package.json" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/foo/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/foo/MainTest.java" afterDir="false" />
+>>>>>>> 34b51ffc82a58c6297bb44195a975719a1101e6f
     </list>
-    <ignored path="$PROJECT_DIR$/classes/" />
-    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -156,6 +160,8 @@
       </file>
     </leaf>
   </component>
+=======
+>>>>>>> 34b51ffc82a58c6297bb44195a975719a1101e6f
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -172,6 +178,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -192,6 +199,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> 34b51ffc82a58c6297bb44195a975719a1101e6f
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -199,13 +208,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="120" />
-    <option name="y" value="-15" />
-    <option name="width" value="1750" />
-    <option name="height" value="1030" />
-  </component>
+  <component name="ProjectId" id="1Uy6f3A7aJ8EpNcXpgaGKom15SC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+<<<<<<< HEAD
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -326,6 +331,8 @@
       <pane id="Scope" />
     </panes>
   </component>
+=======
+>>>>>>> 34b51ffc82a58c6297bb44195a975719a1101e6f
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -386,11 +393,6 @@
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="MainTest_test - 2019.12.13 at 22h 04m 24s.xml">
-      <configuration name="MainTest.test" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -400,6 +402,7 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="55" y="-7" width="1488" height="878" extended-state="6" />
     <layout>
@@ -621,6 +624,20 @@
         </state>
       </provider>
     </entry>
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+>>>>>>> 34b51ffc82a58c6297bb44195a975719a1101e6f
   </component>
   <component name="masterDetails">
     <states>

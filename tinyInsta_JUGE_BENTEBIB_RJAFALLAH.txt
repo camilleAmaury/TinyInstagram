@@ -1,0 +1,5 @@
+Lien du github : https://github.com/camilleAmaury/TinyInstagram
+Lien du site front : http://tinyinstagramfront.appspot.com/
+Lien de l'API :
+	Nous n'avons pas compris ce que vous demandez ici, c'est pourquoi nous avons séparé notre repos github en sous partie front-end/api vous permettant d'explorer le code.
+	De plus le Readme.md détaille précisément les endpoints.

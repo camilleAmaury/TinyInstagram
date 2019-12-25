@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router';
+import { Link } from "react-router-dom";
 import axios from 'axios';
+
 import './login-stylesheet.css'
 
 export default class Login extends Component {
@@ -8,7 +11,9 @@ state = {
     email: '',
     password: '',
     isSignedUp: false,
-    IsError: false
+    IsError: false,
+    redirect_homepage:false,
+    redirect_login:false
   }
 
   handleChangeEmail = event => {
@@ -22,10 +27,9 @@ state = {
   handleSubmit = event => {
     event.preventDefault();
 
-    const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
     const URL = 'https://tinyinstagram-259109.appspot.com/login';
 
-    axios.get(PROXY_URL+URL,{
+    axios.get(URL,{
         params: {
             email: this.state.email,
             password: this.state.password
@@ -33,18 +37,14 @@ state = {
         })
     
       .then(res => {
-        if (res.data[0] == 1) {
-            this.state.isSignedUp = true;
-            let id_user = res.data[1].replace("user(", "").replace(")", "");
-            localStorage.setItem('idUser', id_user);
-            this.props.history.push({
-                pathname : '/homepage'
-              } 
-            );
+        if (res.data[0] === "1") {
+            localStorage.setItem('idUser', res.data[1]);
+            localStorage.setItem('prenomUser', res.data[2]);
+            localStorage.setItem('nomUser', res.data[3]);
+            this.setState({redirect_homepage:true, isSignedUp:true});
         }
         else {
-          this.state.IsError = true;
-          this.props.history.push('/connexion');
+          this.setState({redirect_login:true, IsError:true});
         }
       })
       .catch(function (error) {
@@ -55,7 +55,7 @@ state = {
     render() {
         return (
           
-<div class="login">
+<div className="login">
 
     <h1><img src="https://i.imgur.com/wvLiKam.png" width="200px" height="68px"/></h1>
 
@@ -71,14 +71,18 @@ state = {
     <div className="divider"><b>OU</b></div>
 
     <div className="forgotwrapper">
-        <div className="forgot"><a href="/inscription">
-    Vous n'avez pas de compte?</a></div>
+        <div className="forgot">
+          <Link to={`/signup`}>Vous n'avez pas de compte?</Link>
+        </div>
     </div>
 
     <br/> { this.state.IsError &&
     <div className="alert alert-danger alert-dismissible fade show">
         <strong>Error!</strong> Mot de passe ou email incorrect !
     </div> }
+
+    {this.state.redirect_homepage ? <Redirect to='/homepage'/> : ''}
+    {this.state.redirect_login ? <Redirect to='/login'/> : ''}
 </div>
 
         );

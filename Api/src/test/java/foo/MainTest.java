@@ -14,5 +14,7 @@ public class MainTest {
     Assert.assertEquals("text/plain", response.getContentType());
     Assert.assertEquals("UTF-8", response.getCharacterEncoding());
     Assert.assertEquals("Hello App Engine!\r\n", response.getWriterContent().toString());
+    int i = 0;
+    System.out.println(i++);
   }
 }
